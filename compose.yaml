@@ -9,8 +9,8 @@ services:
       - STREAM_KEY=
       - SAVE_TO_LOAD=1
       # colors from https://critical.ch/xterm/
-      - FG_COLOR=ForestGreen
-      - BG_COLOR=black
+      - FG_COLOR=black
+      - BG_COLOR=white
     volumes:
       - pqcli-saves:/opt/pqcli-stream/.config/pqcli
 volumes:
