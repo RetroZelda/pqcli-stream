@@ -19,6 +19,8 @@
 7. Optionally, change what [colors](https://critical.ch/xterm/) will be displayed
 8. Run `docker compose up`
 
+Optionally you can use the included systemd service
+
 Save games can be recoverd from the docker volumes (e.g. located here: /var/lib/docker/volumes/pqcli-stream_pqcli-saves)
 
 ## How does this work?
