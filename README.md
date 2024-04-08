@@ -21,6 +21,7 @@
 
 Optionally you can use the included systemd service
 
+ALso, you can add music to a ./music folder to have it play
 Save games can be recoverd from the docker volumes (e.g. located here: /var/lib/docker/volumes/pqcli-stream_pqcli-saves)
 
 ## How does this work?

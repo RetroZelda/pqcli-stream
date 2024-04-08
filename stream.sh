@@ -31,11 +31,23 @@ AUDIO_RATE="44100"
 # https://help.twitch.tv/s/twitch-ingest-recommendation
 SERVER="jfk50"
 
+MUSIC_FOLDER="/opt/pqcli-stream/music"
+
+# Check if MUSIC_FOLDER is empty
+concat_cmd=""
+if [ -z "$(find "$MUSIC_FOLDER" -mindepth 1 -maxdepth 1)" ]; then
+    echo "\"$MUSIC_FOLDER\" is empty"
+else
+	concat_list=$(printf "file '%s'\n" "$MUSIC_FOLDER"/*.mp3)
+	concat_cmd="-f concat -stream_loop -1 -safe 0 -i <(echo '$concat_list')"
+fi
+
 # Stream with ffmpeg
 # Leave these unchanged
-ffmpeg -f x11grab \
-	-s "$INRES" \
-	-r "$FPS" \
+ffmpeg_cmd="ffmpeg $concat_cmd \
+	-f x11grab \
+	-s '$INRES' \
+	-r '$FPS' \
 	-i $DISPLAY \
 	-f alsa \
 	-f flv \
@@ -54,4 +66,7 @@ ffmpeg -f x11grab \
 	-acodec libmp3lame \
 	-threads $THREADS \
 	-strict normal \
-	-bufsize $CBR "rtmp://$SERVER.contribute.live-video.net/app/$STREAM_KEY"
+	-bufsize $CBR 'rtmp://$SERVER.contribute.live-video.net/app/$STREAM_KEY'"
+
+echo $ffmpeg_cmd
+eval "$ffmpeg_cmd"
