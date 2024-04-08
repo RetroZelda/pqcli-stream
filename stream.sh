@@ -29,7 +29,7 @@ AUDIO_RATE="44100"
 
 # Select a Twitch server to stream to. See this link for info:
 # https://help.twitch.tv/s/twitch-ingest-recommendation
-SERVER="sea02"
+SERVER="jfk50"
 
 # Stream with ffmpeg
 # Leave these unchanged

@@ -11,9 +11,15 @@
 ## Usage
 
 1. Clone this repo
-2. Add your Twitch [stream key](https://www.twitch.tv/broadcast/dashboard/streamkey) to `compose.yaml`
-3. Optionally, you may [set a server](https://github.com/tycrek/asciiquarium-stream/blob/master/stream.sh#L32) to use
-4. Run `docker compose up`
+2. Clone and run [pqcli](https://github.com/rr-/pq-cli/) once and create a new character
+3. Copy your save.dat file(usually found in ~/.config/pqcli) to the ./initial-save-data folder, although a default one is provided
+4. Add your Twitch [stream key](https://www.twitch.tv/broadcast/dashboard/streamkey) to `compose.yaml`
+5. Optionally, you may [set a server](https://github.com/tycrek/asciiquarium-stream/blob/master/stream.sh#L32) to use
+6. Optionally, change what saved character to run(defaults to 1)
+7. Optionally, change what [colors](https://critical.ch/xterm/) will be displayed
+8. Run `docker compose up`
+
+Save games can be recoverd from the docker volumes (e.g. located here: /var/lib/docker/volumes/pqcli-stream_pqcli-saves)
 
 ## How does this work?
 

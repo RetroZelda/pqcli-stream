@@ -1,9 +1,17 @@
 services:
-  asciiquarium:
+  pqcli:
     build: .
-    container_name: asciiquarium
+    container_name: pqcli
     restart: unless-stopped
     tmpfs: /tmp
     tty: true
     environment:
       - STREAM_KEY=
+      - SAVE_TO_LOAD=1
+      # colors from https://critical.ch/xterm/
+      - FG_COLOR=ForestGreen
+      - BG_COLOR=black
+    volumes:
+      - pqcli-saves:/opt/pqcli-stream/.config/pqcli
+volumes:
+  pqcli-saves:
