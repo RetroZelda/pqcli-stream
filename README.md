@@ -2,7 +2,7 @@
   
 # pqcli-stream
 
-<a href="https://www.twitch.tv/retrozelda" target="_blank"><img width="220px" src="https://img.shields.io/twitch/status/retrozelda?style=for-the-badge&logo=twitch&logoColor=EEEEEE&color=9146FF"></img></a>
+<a href="https://www.twitch.tv/retrozelda" target="_blank"><img width="220px" src="https://img.shields.io/twitch/status/retrozelda_quest?style=for-the-badge&logo=twitch&logoColor=EEEEEE&color=9146FF"></img></a>
 
 *A headless setup for streaming Progress Quest to Twitch. Without a monitor.*
 
